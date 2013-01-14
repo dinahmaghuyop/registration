@@ -16,15 +16,43 @@
  
 body{
 	background-color: #F5F5F5;
-	background: url("red-border.png");	
+	background: url("red-border.png");
+	background-attachment: fixed;
+		
 }
 
 h1, h2, h3, h4, h5, p{
 	font-family: helvetica;
 }
 
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+	height: 25px;
+	line-height: 25px;
+}
+
 .main-container{
 	margin:-10px 0 0 300px;
 	background-color: #F5F5F5;
 	padding: 20px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 15px 5px;
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 15px 5px;
 }	
+
+.logo-container{
+	width: 300px;
+}
