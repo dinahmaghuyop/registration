@@ -9,6 +9,7 @@ group :assets do
 end
 
 gem 'jquery-rails', '~> 2.1.4'
+gem 'jquery-ui-rails'
 gem 'haml', '~> 3.1.7'
 
 gem 'execjs', '~> 1.4.0'
