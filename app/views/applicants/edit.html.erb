@@ -1,6 +1,11 @@
-<h1>Editing applicant</h1>
+<div class="main-container">
 
-<%= render 'form' %>
+	<div class="logo-container">
+		<%= image_tag "clinicit-logo.png" %>
+	</div>
 
-<%= link_to 'Show', @applicant %> |
-<%= link_to 'Back', applicants_path %>
+	<%= render 'form' %>
+	
+	<%= link_to 'Show Full Profile', @applicant, :class=>"btn btn-link" %>
+	
+</div>

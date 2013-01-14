@@ -40,7 +40,7 @@ class ApplicantsController < ApplicationController
 
     respond_to do |format|
       if @applicant.save
-        format.html { redirect_to @applicant, notice: 'Applicant was successfully created.' }
+        format.html { redirect_to @applicant, notice: "Thank you #{@applicant.full_name}!<br /><small>You will be hearing from us soon!</small>".html_safe }
         format.json { render json: @applicant, status: :created, location: @applicant }
       else
         format.html { render action: "new" }

@@ -45,14 +45,31 @@ input[type="color"],
 	line-height: 25px;
 }
 
+
 .main-container{
 	margin:-10px 0 0 300px;
 	background-color: #F5F5F5;
 	padding: 20px;
 	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 15px 5px;
-    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 15px 5px;
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 15px 5px;	
 }	
+
+.full-container{
+	height: 100%;
+	width: 98%;
+	background-color: #F5F5F5;
+	padding: 20px;
+}
 
 .logo-container{
 	width: 300px;
+	margin: 20px 0px 30px 0px;
+}
+
+#notice{
+	color: #444;
+}
+
+.stats{
+	color: #777;
 }

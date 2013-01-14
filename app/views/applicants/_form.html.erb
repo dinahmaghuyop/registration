@@ -11,22 +11,21 @@
     </div>
   <% end %>
 
- <br /><br />
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
   <div class="field">
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
   </div>
   <div class="field">
     <%= f.label :course %>
     <%= f.text_field :course, :placeholder => "e.g. B.S. Computer Science" %>
   </div>
   <div class="field">
-    <%= f.label :app_type %>
-    <%= f.number_field :app_type %>
+    <%= f.label :app_type, "Internship or Employment?" %>
+	<%= f.select :app_type, Applicant::TYPES.collect{|key ,value| [key.to_s.titleize, value]} %>
   </div>
   <div class="field">
     <%= f.label :grad_date, "Date of Graduation" %>

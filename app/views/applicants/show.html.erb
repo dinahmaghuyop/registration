@@ -1,45 +1,57 @@
-<p id="notice"><%= notice %></p>
+<div class="main-container">
+	<div class="logo-container">
+		<%= image_tag "clinicit-logo.png" %>
+	</div>
+	
+	<p id="notice"><h3><%= notice %></h3></p>
 
-<p>
-  <b>Last name:</b>
-  <%= @applicant.last_name %>
-</p>
+	<hr />
+	
+	<p>
+	  <b>First name:</b>
+	  <%= @applicant.first_name %>
+	</p>
 
-<p>
-  <b>First name:</b>
-  <%= @applicant.first_name %>
-</p>
+	<p>
+	  <b>Last name:</b>
+	  <%= @applicant.last_name %>
+	</p>
+	
+	<p>
+	  <b>Course:</b>
+	  <%= @applicant.course %>
+	</p>
+	
+	<p>
+	  <b>Internship or Employment?</b>
+	  <%= @applicant.app_type %>
+	</p>
 
-<p>
-  <b>Course:</b>
-  <%= @applicant.course %>
-</p>
+	<p>
+	  <b>Date of Graduation</b>
+	  <%= @applicant.grad_date.to_formatted_s(:long) %>
+	</p>
+	
+	<p>
+	  <b>Date of Availability</b>
+	  <%= @applicant.start_date.to_formatted_s(:long) %>
+	</p>
 
-<p>
-  <b>Grad date:</b>
-  <%= @applicant.grad_date %>
-</p>
+	<p>
+	  <b>Contact number:</b>
+	  <%= @applicant.contact_number %>
+	</p>
 
-<p>
-  <b>Contact number:</b>
-  <%= @applicant.contact_number %>
-</p>
+	
 
-<p>
-  <b>App type:</b>
-  <%= @applicant.app_type %>
-</p>
+	<p>
+	  <b>Email:</b>
+	  <%= @applicant.email %>
+	</p>
 
-<p>
-  <b>Email:</b>
-  <%= @applicant.email %>
-</p>
+	
+	
+<hr />
 
-<p>
-  <b>Start date:</b>
-  <%= @applicant.start_date %>
-</p>
-
-
-<%= link_to 'Edit', edit_applicant_path(@applicant) %> |
-<%= link_to 'Back', applicants_path %>
+<%= link_to 'Edit', edit_applicant_path(@applicant), :class => "btn" %>
+<%= link_to 'New', new_applicant_path, :class => "btn" %>
