@@ -8,6 +8,23 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
+ *= require bootstrap
+ *= require_self 
  *= require_tree .
  */
+
+ 
+body{
+	background-color: #F5F5F5;
+	background: url("red-border.png");	
+}
+
+h1, h2, h3, h4, h5, p{
+	font-family: helvetica;
+}
+
+.main-container{
+	margin:-10px 0 0 300px;
+	background-color: #F5F5F5;
+	padding: 20px;
+}	
