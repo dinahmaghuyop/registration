@@ -11,39 +11,41 @@
     </div>
   <% end %>
 
+ <br /><br />
   <div class="field">
-    <%= f.label :last_name %><br />
+    <%= f.label :last_name %>
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :first_name %><br />
+    <%= f.label :first_name %>
     <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :course %><br />
-    <%= f.text_field :course %>
+    <%= f.label :course %>
+    <%= f.text_field :course, :placeholder => "e.g. B.S. Computer Science" %>
   </div>
   <div class="field">
-    <%= f.label :grad_date %><br />
-    <%= f.date_select :grad_date %>
-  </div>
-  <div class="field">
-    <%= f.label :contact_number %><br />
-    <%= f.text_field :contact_number %>
-  </div>
-  <div class="field">
-    <%= f.label :app_type %><br />
+    <%= f.label :app_type %>
     <%= f.number_field :app_type %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.label :grad_date, "Date of Graduation" %>
+    <%= f.date_select :grad_date, :placeholder => "April 2013" %>
   </div>
-  <div class="field">
-    <%= f.label :start_date %><br />
+    <div class="field">
+    <%= f.label :start_date, "Date of Availability" %>
     <%= f.date_select :start_date %>
   </div>
+  <div class="field">
+    <%= f.label :contact_number %>
+    <%= f.text_field :contact_number %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+	<hr />
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save", :class => "btn btn-primary btn-large" %>
   </div>
 <% end %>
