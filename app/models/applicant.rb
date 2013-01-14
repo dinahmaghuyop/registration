@@ -1,3 +1,15 @@
 class Applicant < ActiveRecord::Base
-  attr_accessible :app_type, :contact_number, :course, :email, :first_name, :grad_date, :last_name, :start_date
+
+  attr_accessible :app_type, :contact_number, :course, :email, :first_name, 
+    :grad_date, :last_name, :start_date
+    
+  validates_presence_of :last_name
+  validates_presence_of :first_name
+  validates_presence_of :course
+  validates_presence_of :email
+  validates_presence_of :contact_number
+  validates_presence_of :grad_date
+  validates_presence_of :app_type
+  validates_presence_of :start_date
+  
 end
