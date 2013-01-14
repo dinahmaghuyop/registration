@@ -73,3 +73,15 @@ input[type="color"],
 .stats{
 	color: #777;
 }
+
+.field_with_errors{
+	background-color: #F5F5F5 !important;
+}
+
+.field_with_errors input{
+	background-color: #FFE8E8;
+}
+
+.field_with_errors label{
+	font-weight: bold;
+}
