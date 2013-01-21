@@ -34,6 +34,7 @@
     <div class="field">
     <%= f.label :start_date, "Date of Availability" %>
     <%= f.date_select :start_date %>
+    
   </div>
   <div class="field">
     <%= f.label :contact_number %>
@@ -45,7 +46,7 @@
   </div>
 	<hr />
 	
-  <% button_id = ['new', 'create'].include?(params[:action]) ? 'save-button' : 'update-button' %>
+	<% button_id = ['new', 'create'].include?(params[:action]) ? 'save-button' : 'update-button' %>
   <div class="actions">
     <%= f.submit "Save", :class => "btn btn-primary btn-large", :id => button_id %>
   </div>

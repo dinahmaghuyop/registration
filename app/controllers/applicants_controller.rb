@@ -70,7 +70,7 @@ class ApplicantsController < ApplicationController
   def destroy
     @applicant = Applicant.find(params[:id])
     @applicant.destroy
-
+    
     respond_to do |format|
       format.html { redirect_to applicants_url(:deleted_applicant => @applicant.first_name) }
       format.json { head :no_content }
