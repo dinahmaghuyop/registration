@@ -44,7 +44,9 @@
     <%= f.text_field :email %>
   </div>
 	<hr />
+	
+  <% button_id = ['new', 'create'].include?(params[:action]) ? 'save-button' : 'update-button' %>
   <div class="actions">
-    <%= f.submit "Save", :class => "btn btn-primary btn-large" %>
+    <%= f.submit "Save", :class => "btn btn-primary btn-large", :id => button_id %>
   </div>
 <% end %>

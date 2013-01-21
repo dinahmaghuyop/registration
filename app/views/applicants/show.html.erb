@@ -24,7 +24,7 @@
 	
 	<p>
 	  <b>Internship or Employment?</b>
-	  <%= @applicant.app_type %>
+	  <%= Applicant::TYPES.index(@applicant.app_type) %>
 	</p>
 
 	<p>
