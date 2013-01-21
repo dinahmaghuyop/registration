@@ -3,6 +3,8 @@ class ApplicantsController < ApplicationController
   def index
     @applicants = Applicant.all
 
+    @deleted_applicant = params[:deleted_applicant]
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @applicants }
@@ -68,9 +70,9 @@ class ApplicantsController < ApplicationController
   def destroy
     @applicant = Applicant.find(params[:id])
     @applicant.destroy
-
+    
     respond_to do |format|
-      format.html { redirect_to applicants_url }
+      format.html { redirect_to applicants_url(:deleted_applicant => @applicant.first_name) }
       format.json { head :no_content }
     end
   end

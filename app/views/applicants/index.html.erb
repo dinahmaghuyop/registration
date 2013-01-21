@@ -48,3 +48,10 @@
 <%= link_to 'New Applicant', new_applicant_path, :class => "btn" %>
 
 </div>
+
+<% if @deleted_applicant.present? %>
+  <script type='text/javascript'>
+    var deletedApplicant = "<%= @deleted_applicant %>";
+    alert('Deleted: ' + deletedApplicant);  
+  </script>
+<% end %>

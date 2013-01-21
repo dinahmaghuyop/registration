@@ -24,7 +24,7 @@
 	
 	<p>
 	  <b>Internship or Employment?</b>
-	  <%= @applicant.app_type %>
+	  <%= Applicant::TYPES.index(@applicant.app_type) %>
 	</p>
 
 	<p>
@@ -39,7 +39,7 @@
 
 	<p>
 	  <b>Contact number:</b>
-	  <%= @applicant.contact_number %>
+	  <span id='mobile-number'><%= @applicant.contact_number %></span>
 	</p>
 
 	
