@@ -8,22 +8,22 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+
+ *= require_self
  *= require bootstrap
- *= require_self 
  *= require_tree .
  */
 
- 
-body{
-	background-color: #F5F5F5;
-	background: url("red-border.png");
-	background-attachment: fixed;
-		
-}
+
+html, body { height: 100%; }
+
+body{ background: #37b699; }
 
 h1, h2, h3, h4, h5, p{
 	font-family: helvetica;
 }
+
+h3 { line-height: 25px !important; }
 
 textarea,
 input[type="text"],
@@ -40,19 +40,38 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"],
+select,
 .uneditable-input {
 	height: 25px;
 	line-height: 25px;
+	border: 2px solid #dedede !important;
+	box-shadow: none !important;
+
+	&:focus {
+		border-color: #37B699 !important;
+  	box-shadow: none !important;
+  	outline: none !important;
+	}
 }
 
+input[type="submit"] {
+  box-shadow: none !important;
+	outline: none !important;
+}
+
+label {
+	font-size: 13px !important;
+	color: #777;
+}
 
 .main-container{
-	margin:-10px 0 0 300px;
-	background-color: #F5F5F5;
-	padding: 20px;
-	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 15px 5px;
-    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 15px 5px;	
-}	
+	min-height: 100%;
+	margin: 0 0 0 150px;
+	background-color: #F3F2EE;
+	padding: 20px 35px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 25px 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 25px 5px;
+}
 
 .full-container{
 	height: 100%;
@@ -61,9 +80,27 @@ input[type="color"],
 	padding: 20px;
 }
 
+.right-container {
+	width: 610px;
+	height: 100%;
+	background-color: #F3F2EE;
+	float: right;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.10) 2px 2px 25px 5px;
+  box-shadow: rgba(0, 0, 0, 0.10) 2px 2px 25px 5px;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
 .logo-container{
-	width: 300px;
 	margin: 20px 0px 30px 0px;
+}
+
+.art-container {
+	position: fixed;
+	right: 40px;
+	bottom: 160px;
+	img { width: 530px; }
 }
 
 #notice{
@@ -85,3 +122,18 @@ input[type="color"],
 .field_with_errors label{
 	font-weight: bold;
 }
+
+.form {
+	width: 450px;
+	input, textarea { width: 435px; }
+	select { width: 450px; }
+
+	.field-date {
+		select { width: 147px; }
+	}
+}
+
+.text-red { color: #B84E4C; }
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }

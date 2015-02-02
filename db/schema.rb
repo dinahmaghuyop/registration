@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130114141327) do
     t.integer  "app_type"
     t.string   "email"
     t.date     "start_date"
+    t.text     "languages"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end

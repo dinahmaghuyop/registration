@@ -1,0 +1,40 @@
+.main-container
+
+  .logo-container
+    = image_tag "dglogo-black.png"
+
+  %hr
+
+  %dl.dl-horizontal
+
+    %dt First Name:
+    %dd= @applicant.first_name
+
+    %dt Last Name:
+    %dd= @applicant.last_name
+
+    %dt Course:
+    %dd= @applicant.course
+
+    %dt Internship or Employment?
+    %dd= Applicant::TYPES.index(@applicant.app_type)
+
+    %dt Date of Graduation
+    %dd= @applicant.grad_date.to_formatted_s(:long)
+
+    %dt Date of Availability
+    %dd= @applicant.start_date.to_formatted_s(:long)
+
+    %dt Contact number:
+    %dd#mobile-number= @applicant.contact_number
+
+    %dt Email:
+    %dd= @applicant.email
+
+  %hr
+
+  .text-right.form
+    = link_to 'Edit', edit_applicant_path(@applicant), :class => "btn btn-large btn-green"
+    = link_to 'New', new_applicant_path, :class => "btn btn-large btn-primary"
+
+  = render 'art'

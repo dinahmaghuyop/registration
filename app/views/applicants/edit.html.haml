@@ -1,0 +1,8 @@
+.main-container
+
+  .logo-container
+    = image_tag "dglogo-black.png"
+
+  = render partial: 'form', locals: { applicant: @applicant }
+
+  = render 'art'

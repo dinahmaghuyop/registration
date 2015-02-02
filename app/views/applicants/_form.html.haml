@@ -1,0 +1,51 @@
+= form_for applicant, {:html => {:class => "form"}} do |f|
+
+  - if applicant.errors.any?
+    .alert.alert-error
+      %h5
+        Oops, looks like you missed something!
+      %ul
+        - applicant.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :first_name, "First Name"
+    = f.text_field :first_name
+
+  .field
+    = f.label :last_name, "Last Name"
+    = f.text_field :last_name
+
+  .field
+    = f.label :course
+    = f.text_field :course, :placeholder => "e.g. B.S. Computer Science"
+
+  .field
+    = f.label :app_type, "Internship or Employment?"
+    = f.select :app_type, Applicant::TYPES.collect{|key ,value| [key.to_s.titleize, value]}
+
+  .field.field-date
+    = f.label :grad_date, "Date of Graduation"
+    = f.date_select :grad_date, :placeholder => "April 2013"
+
+  .field.field-date
+    = f.label :start_date, "Date of Availability"
+    = f.date_select :start_date
+
+  .field
+    = f.label :contact_number, "Mobile Number"
+    = f.text_field :contact_number
+
+  .field
+    = f.label :email
+    = f.text_field :email
+
+  .field
+    = f.label :languages, "Preferred Language/s"
+    = f.text_area :languages, rows: 3, placeholder: "e.g. Ruby, Java, PHP"
+
+  %br
+
+  - button_id = ['new', 'create'].include?(params[:action]) ? 'save-button' : 'update-button'
+  .actions
+    = f.submit "Submit", :class => "btn btn-large btn-primary btn-block", :id => button_id

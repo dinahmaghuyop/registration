@@ -1,0 +1,49 @@
+.full-container
+  .logo-container
+    = image_tag "dglogo-black.png"
+
+  %h3 Jobfair 2015 - University of the Philippines Diliman
+
+  .stats
+    Internship:
+    %b= Applicant.interns.count
+    %br/
+    Employment:
+    %b= Applicant.employees.count
+    %br/
+    Total:
+    %b= Applicant.all.count
+  %br/
+  %table.table.table-hover.table-striped
+    %tr
+      %th Last name
+      %th First name
+      %th Course
+      %th App type
+      %th Grad date
+      %th Start date
+      %th Contact number
+      %th Email
+      %th
+      %th
+      %th
+    - @applicants.each do |applicant|
+      %tr
+        %td= applicant.last_name
+        %td= applicant.first_name
+        %td= applicant.course
+        %td= Applicant::TYPES.index(applicant.app_type)
+        %td= applicant.grad_date.to_formatted_s(:long)
+        %td= applicant.start_date.to_formatted_s(:long)
+        %td= applicant.contact_number
+        %td= applicant.email
+        %td= link_to 'Show', applicant
+        %td= link_to 'Edit', edit_applicant_path(applicant)
+        %td= link_to 'Destroy', applicant, method: :delete, data: { confirm: 'Are you sure?' }
+  %br/
+  = link_to 'New Applicant', new_applicant_path, :class => "btn"
+
+- if @deleted_applicant.present?
+  :javascript
+    var deletedApplicant = " @deleted_applicant ";
+    alert('Deleted: ' + deletedApplicant);

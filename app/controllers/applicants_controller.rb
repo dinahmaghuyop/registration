@@ -1,5 +1,5 @@
 class ApplicantsController < ApplicationController
-  
+
   def index
     @applicants = Applicant.all
 
@@ -11,7 +11,7 @@ class ApplicantsController < ApplicationController
     end
   end
 
-  
+
   def show
     @applicant = Applicant.find(params[:id])
 
@@ -21,7 +21,7 @@ class ApplicantsController < ApplicationController
     end
   end
 
-  
+
   def new
     @applicant = Applicant.new
 
@@ -31,18 +31,18 @@ class ApplicantsController < ApplicationController
     end
   end
 
-  
+
   def edit
     @applicant = Applicant.find(params[:id])
   end
 
-  
+
   def create
     @applicant = Applicant.new(params[:applicant])
 
     respond_to do |format|
       if @applicant.save
-        format.html { redirect_to @applicant, notice: "Thank you #{@applicant.full_name}!<br /><small>You will be hearing from us soon!</small>".html_safe }
+        format.html { redirect_to [:new, :applicant], notice: "Thank you, #{@applicant.first_name}!<br /><small>You will be hearing from us soon!</small>".html_safe }
         format.json { render json: @applicant, status: :created, location: @applicant }
       else
         format.html { render action: "new" }
@@ -51,13 +51,13 @@ class ApplicantsController < ApplicationController
     end
   end
 
-  
+
   def update
     @applicant = Applicant.find(params[:id])
 
     respond_to do |format|
       if @applicant.update_attributes(params[:applicant])
-        format.html { redirect_to @applicant, notice: 'Applicant was successfully updated.' }
+        format.html { redirect_to [:edit, @applicant], notice: 'Profile successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -66,11 +66,11 @@ class ApplicantsController < ApplicationController
     end
   end
 
-  
+
   def destroy
     @applicant = Applicant.find(params[:id])
     @applicant.destroy
-    
+
     respond_to do |format|
       format.html { redirect_to applicants_url(:deleted_applicant => @applicant.first_name) }
       format.json { head :no_content }

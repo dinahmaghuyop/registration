@@ -1,0 +1,78 @@
+@mixin transition-button($time)
+  transition: background $time ease-out
+
+$light-green: #59C4B0
+$green: #37B699
+$dark-green: #21A687
+$salmon: #FB6150
+$gray: #C2C2C2
+$dark-gray: #8F8F8F
+
+.btn
+  display: inline-block
+  margin-bottom: 0
+  font-weight: normal
+  text-align: center
+  vertical-align: middle
+  cursor: pointer
+  position: relative
+  background-image: none
+  border: none
+  white-space: nowrap
+  padding: 8px 15px
+  font-size: 12px
+  line-height: 12px
+  color: #fff
+  border-radius: 3px
+  outline: none
+  text-align: center
+  text-decoration: none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  text-decoration: none
+  text-shadow: none
+  +transition-button(.2s)
+  &.disabled
+    opacity: .7
+  &.btn-primary
+    color: #fff
+    background-color: $salmon
+    &:hover
+      background-color: darken($salmon, 5%)
+  &.btn-secondary
+    color: $green
+    background-color: transparent
+  &.btn-green
+    color: #fff
+    background-color: $green
+    &:hover
+      background-color: darken($green, 5%)
+  &.btn-disabled
+    background-color: $gray
+    color: #fff
+    &:hover
+      cursor: default
+
+  &.btn-centered
+    width: inherit
+    margin-left: auto
+    margin-right: auto
+
+.btn-small
+  font-size: 14px
+  line-height: 1.4
+  padding: 4px 15px
+.btn-large
+  font-size: 16px
+  padding: 10px 55px
+.btn-rounded
+  border-radius: 30px
+.btn-block
+  display: block
+  width: 100%
+  margin-bottom: 10px
+.btn-wider
+  padding-left: 35px
+  padding-right: 35px

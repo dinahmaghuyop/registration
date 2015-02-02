@@ -9,6 +9,7 @@ class CreateApplicants < ActiveRecord::Migration
       t.integer :app_type
       t.string :email
       t.date :start_date
+      t.text :languages
 
       t.timestamps
     end

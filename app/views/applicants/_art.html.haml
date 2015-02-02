@@ -1,0 +1,8 @@
+.right-container{ class: "#{'expanded' if flash[:notice]}" }
+  .art-container
+
+    - if flash[:notice]
+      %h3.text-right.text-red.alert-fade
+        = flash[:notice]
+
+    = image_tag "dg-art.png"
