@@ -24,6 +24,7 @@
       %th Start date
       %th Contact number
       %th Email
+      %th Languages
       %th
       %th
       %th
@@ -37,6 +38,7 @@
         %td= applicant.start_date.to_formatted_s(:long)
         %td= applicant.contact_number
         %td= applicant.email
+        %td= applicant.languages
         %td= link_to 'Show', applicant
         %td= link_to 'Edit', edit_applicant_path(applicant)
         %td= link_to 'Destroy', applicant, method: :delete, data: { confirm: 'Are you sure?' }
